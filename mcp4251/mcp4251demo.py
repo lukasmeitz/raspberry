@@ -1,7 +1,7 @@
 # @author lukasmeitz
 
 # imports
-import MCP4251
+import mcp4251
 
 # parameters
 spibus = 0

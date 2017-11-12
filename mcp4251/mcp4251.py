@@ -66,16 +66,16 @@ class MCP4251:
 
     def setA(self, value):
         #check value bounds
-        _setWiper(value, 'A')
+        self._setWiper(value, 'A')
 
     def setB(self, value):
         #check value bounds
-        _setWiper(value, 'B')
+        self._setWiper(value, 'B')
 
     def setBoth(self, value):
         # set value to both wipers
-        setA(value)
-        setB(value)
+        self.setA(value)
+        self.setB(value)
 
     def _setWiper(self, value, wiper):
         # check bounds
@@ -90,7 +90,7 @@ class MCP4251:
         # as well as the wiper adress
         if wiper == 'A':
             msb = msb | MCP4251.wiperAmask
-        else if wiper == 'B':
+        elif wiper == 'B':
             msb = msb | MCP4251.wiperBmask
         else:
             return
